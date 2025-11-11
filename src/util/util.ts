@@ -1,4 +1,6 @@
-export const dasherize = (str: string): string => {
+export const dasherize = (str: string | undefined): string => {
+  if (!str)
+    return ''
 
   const removeSnakeAndSpaces =
     (match: string, index: number) => `${index === 0 || index === str.length - 1 ? match : '-'}`
