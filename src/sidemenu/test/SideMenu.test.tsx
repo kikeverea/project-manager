@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, test } from 'vitest'
 import '@testing-library/jest-dom'
 import { screen, render, within } from '@testing-library/react'
-import SideMenu from './SideMenu.tsx'
+import SideMenu from '../SideMenu.tsx'
 
 describe('Menu item', () => {
 
