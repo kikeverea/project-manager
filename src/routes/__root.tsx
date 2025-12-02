@@ -1,6 +1,7 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons/faHouse'
+import { faListCheck } from '@fortawesome/free-solid-svg-icons/faListCheck'
 import SideMenu from '../sidemenu/SideMenu.tsx'
 
 export const Route = createRootRoute({
@@ -8,7 +9,7 @@ export const Route = createRootRoute({
     return (
       <div className='flex items-stretch h-screen'>
         <SideMenu items={[
-          { label: 'Item 1', icon: <FontAwesomeIcon icon={faHouse} />, path: 'no_path'  },
+          { label: 'Proyectos', icon: <FontAwesomeIcon icon={faListCheck} />, path: '/'  },
           { label: 'Item 2', icon: <FontAwesomeIcon icon={faHouse} />, path: '#', subitems: [
             { label: 'Sub item 1', icon: <FontAwesomeIcon icon={faHouse} />, path: 'sub' },
             { label: 'Sub item 2', icon: <FontAwesomeIcon icon={faHouse} />, path: 'no_path' },

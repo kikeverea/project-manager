@@ -7,22 +7,22 @@ import {
   createRoute,
   createRouter,
   RouterProvider
-} from "@tanstack/react-router";
-import type { ReactNode } from "react";
+} from '@tanstack/react-router'
+import type { ReactNode } from 'react'
 
 const buildRouter = (children: ReactNode) => {
-  const rootRoute = createRootRoute();
+  const rootRoute = createRootRoute()
   const testRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: '/',
     component: () => children,
-  });
-  const routeTree = rootRoute.addChildren([testRoute]);
+  })
+  const routeTree = rootRoute.addChildren([testRoute])
 
   return createRouter({
     routeTree,
     history: createMemoryHistory({ initialEntries: ['/'] }),
-  });
+  })
 }
 
 export function render(children: ReactNode) {

@@ -1,6 +1,6 @@
-import type { MenuItem } from "./types.ts";
-import SideMenuItemContent from "./content/SideMenuItemContent.tsx";
-import { Link } from "@tanstack/react-router";
+import type { MenuItem } from './types.ts'
+import SideMenuItemContent from './content/SideMenuItemContent.tsx'
+import { Link } from '@tanstack/react-router'
 
 const SideMenuLink = (item: MenuItem) => {
 
@@ -14,4 +14,4 @@ const SideMenuLink = (item: MenuItem) => {
   )
 }
 
-export default SideMenuLink;
+export default SideMenuLink

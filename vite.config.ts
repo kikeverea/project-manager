@@ -3,16 +3,19 @@ import { configDefaults } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
+import svgr from 'vite-plugin-svgr'
+
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    react(),
     tailwindcss(),
     tanstackRouter({
       target: 'react',
       autoCodeSplitting: true,
     }),
-    react(),
+    svgr()
   ],
   test: {
     environment: 'jsdom',
