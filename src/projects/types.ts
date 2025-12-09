@@ -1,11 +1,11 @@
 export interface Project extends Trackable {
-  id: number
-  name: string
+  id: string
+  name: string,
   phases?: ProjectPhase[]
 }
 
 export interface ProjectPhase extends Trackable {
-  id: number
+  id: string
   name?: string
   order: number
 }
@@ -13,4 +13,5 @@ export interface ProjectPhase extends Trackable {
 export interface Trackable {
   maxHours: number
   currentHours: number
+  tracking?: true
 }

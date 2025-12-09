@@ -9,7 +9,7 @@ type SideMenuProps = {
 
 const SideMenu = ({ label='MENU', items } : SideMenuProps) => {
   return (
-    <div className='bg-slate-800 w-[75px] xl:w-[250px] transition-all duration-300'>
+    <aside className='bg-slate-800 w-[75px] xl:w-[250px] transition-all duration-300'>
 
       {/* Header */}
       <div className='p-4 border-b border-gray-600'>
@@ -26,7 +26,7 @@ const SideMenu = ({ label='MENU', items } : SideMenuProps) => {
           ))}
         </ul>
       </div>
-    </div>
+    </aside>
   )
 }
 
