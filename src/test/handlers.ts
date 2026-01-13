@@ -7,6 +7,7 @@ export const projectList: Project[] = [
     name: 'Project 1',
     currentHours: 5,
     maxHours: 15,
+    tracking: true,
   },
   {
     id: 2,
@@ -17,9 +18,5 @@ export const projectList: Project[] = [
 ]
 
 export const handlers = [
-
-  http.get('/api/projects', async () => {
-    return HttpResponse.json(projectList)
-  }),
-
+  http.get('/api/projects', async () => HttpResponse.json(projectList))
 ]

@@ -54,18 +54,28 @@ describe('Project List', () => {
     })
 
     test('renders project rows', async () => {
-      const indicator = screen.getByRole('status')
-      expect(indicator).toBeInTheDocument()
-
       const rows = await getRows()
       expect(rows.length).toBe(projectList.length)
 
       rows.forEach((row, i) => {
         const project = projectList[i]
-        const [ name, hours ] = within(row).getAllByRole('cell')
+        const [ name ] = within(row).getAllByRole('cell')
 
         expect(name.textContent).toBe(project.name)
-        expect(hours.textContent).toBe(`${project.currentHours}/${project.maxHours}`)
+      })
+    })
+
+    test('renders tracking badge if project is being tracked', async () => {
+      const rows = await getRows()
+
+      rows.forEach((row, i) => {
+        const project = projectList[i]
+        const trackingIndicator = within(row).queryByRole('status', { name: "tracking" })
+
+        if (project.tracking)
+          expect(trackingIndicator).toBeInTheDocument()
+        else
+          expect(trackingIndicator).not.toBeInTheDocument()
       })
     })
   })

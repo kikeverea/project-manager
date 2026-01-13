@@ -3,15 +3,18 @@ import { server } from './server.ts'
 import { cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/vitest'
 
-
-beforeAll(() => server.listen())
+beforeAll(() => {
+  server.listen()
+})
 
 afterEach(() => {
   server.resetHandlers()
   cleanup()
 })
 
-afterAll(() => server.close())
+afterAll(() => {
+  server.close()
+})
 
 
 vi.mock('@tanstack/react-router', async (importActual) => {

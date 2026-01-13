@@ -1,11 +1,7 @@
-import { screen, waitFor, within } from '@testing-library/react'
-import { expect } from 'vitest'
+import { screen, waitForElementToBeRemoved, within } from '@testing-library/react'
 
 export const getRows = async () => {
-  await waitFor(() => {
-    const indicator = screen.queryByRole('status')
-    expect(indicator).not.toBeInTheDocument()
-  })
+  await waitForElementToBeRemoved(() => screen.queryByRole('status', { name: /loading/i }))
 
   const [_header, body] = screen.getAllByRole('rowgroup')
   return within(body).getAllByRole('row')
