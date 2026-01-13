@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import api from './projectService.ts'
 import type { Project } from './types'
 import { trackableHours, trackableOverLimit } from './trackable.ts'
+import Draggable from '../components/Draggable.tsx'
 
 const route = getRouteApi('/projects/$id')
 
@@ -25,6 +26,7 @@ const ProjectItem = () => {
       <div className={`py-2 ${trackableOverLimit(project) ? 'text-red-800' : ''}`}>
         Hours: { trackableHours(project) }
       </div>
+      <Draggable />
     </div>
   )
 }
